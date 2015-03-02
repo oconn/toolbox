@@ -1,0 +1,54 @@
+# ~/.tmuxinator/teachstone.yml
+
+name: teachstone
+root: ~/Projects/
+
+    # Optional tmux socket
+    # socket_name: foo
+
+    # Runs before everything. Use it to start daemons etc.
+pre: mysqlstart
+
+    # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+    # pre_window: rbenv shell 2.1.3
+
+    # Pass command line options to tmux. Useful for specifying a different tmux.conf.
+    # tmux_options: -f ~/.tmux.mac.conf
+
+    # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+    # tmux_command: byobu
+
+windows:
+    - client:
+        layout: even-horizontal
+        panes:
+            - terminal:
+                - cd teachstone && clear
+            - server:
+                - cd teachstone && clear
+                - PROXY_URL=http://localhost:3000 gulp
+    - vim:
+        panes:
+            - editor:
+                - cd teachstone && clear
+                - vim .
+    - api:
+        layout: even-horizontal
+        panes:
+            - server:
+                - cd myteachstone-be && clear
+                - git checkout develop && git pull
+                - cp example.env .env
+                - bundle install
+                - rails server --port 3000
+            - elastic:
+                - elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml
+    - casino:
+        layout: even-horizontal
+        panes:
+            - server:
+                - cd casino && clear
+                - git checkout develop && git pull
+                - cp example.env .env
+                - bundle install
+                - rails server --port 4000

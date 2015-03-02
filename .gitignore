@@ -1,0 +1,10 @@
+.#*
+*~
+\#*
+__MACOSX
+.DS_Store
+*.sw[pio]
+
+.vim/.netrwhist
+!.vim/bundle/Vundle.vim/*
+.vim/bundle

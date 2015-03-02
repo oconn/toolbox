@@ -1,0 +1,6 @@
+alias vim='/usr/local/bin/vim'
+alias esstart="elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml"
+alias mysqlstart="mysql.server start"
+alias mysqlstop="mysql.server stop"
+alias gpod="git pull origin develop"
+alias gpoh="git push origin HEAD"
