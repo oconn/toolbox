@@ -30,6 +30,12 @@ Plugin 'mxw/vim-jsx'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 
+" Syntax Highlighting for Swift
+Plugin 'keithbsmiley/swift.vim'
+
+" plugin for Cocoa/Objective-C development.
+Plugin 'msanders/cocoa.vim'
+
 " Syntax Highlighting for hbs
 Plugin 'mustache/vim-mustache-handlebars'
 
