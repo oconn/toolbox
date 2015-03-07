@@ -54,6 +54,10 @@ Plugin 'tomtom/tlib_vim'
 " Snippets
 Plugin 'garbas/vim-snipmate'
 
+" Post gists to github
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 
@@ -169,6 +173,9 @@ let g:jsx_ext_required = 0
 let g:jsdoc_allow_input_prompt = 1
 let g:jsdoc_default_mapping = 0
 
+" Use pbcopy for gist-vim
+let g:gist_clip_command = 'pbcopy'
+
 " Disable mulptiple cursor default
 "let g:multi_cursor_use_default_mapping=0
 "let g:multi_cursor_next_key='<Leader>n'
@@ -193,3 +200,4 @@ nnoremap <Leader>p :r !pbpaste<CR>
 nnoremap <Leader>c :r !pbcopy<CR>
 nnoremap <Leader>y :JsDoc<CR>
 nnoremap <Leader>d :split<Esc>
+nnoremap <Leader>i :Gist -p<CR>
