@@ -24,5 +24,5 @@ source ~/.servers
 source ~/.environment_variables
 
 # Sourcing NVM & RVM
-source /usr/local/opt/nvm/nvm.sh
+source ~/.nvm/nvm.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
