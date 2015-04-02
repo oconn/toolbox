@@ -19,6 +19,12 @@ GREEN='\[\033[0;32m\]'
 
 export PS1="\u \W:$GREEN\$(parse_git_branch)\[\033[00m\] $ "
 
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+    export TERM='xterm-256color'
+else
+    export TERM='xterm-color'
+fi
+
 source ~/.aliases
 source ~/.servers
 source ~/.environment_variables

@@ -5,7 +5,7 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -115,12 +115,9 @@ set mousehide
 set backspace=indent,eol,start
 set clipboard=unnamed            " Use OSX clipboard in vim"
 
-" syntax enable
-syntax on
-set background=dark
+syntax enable
 
-colorscheme distinguished
-" colorscheme twilight
+colorscheme codeschool
 
 " Custom Commands
 
@@ -156,12 +153,6 @@ let mapleader= ","
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 0
-
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
@@ -177,11 +168,11 @@ let g:jsdoc_default_mapping = 0
 let g:gist_clip_command = 'pbcopy'
 
 " Disable mulptiple cursor default
-"let g:multi_cursor_use_default_mapping=0
-"let g:multi_cursor_next_key='<Leader>n'
-"let g:multi_cursor_prev_key='<Leader>p'
-"let g:multi_cursor_skip_key='<Leader>x'
-"let g:multi_cursor_quit_key='<Esc>'
+" let g:multi_cursor_use_default_mapping=0
+" let g:multi_cursor_next_key='<Leader>n'
+" let g:multi_cursor_prev_key='<Leader>p'
+" let g:multi_cursor_skip_key='<Leader>x'
+" let g:multi_cursor_quit_key='<Esc>'
 
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
