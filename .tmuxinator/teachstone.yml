@@ -52,3 +52,6 @@ windows:
                 - cp example.env .env
                 - bundle install
                 - rails server --port 4000
+            - redis:
+                - redis-server
+

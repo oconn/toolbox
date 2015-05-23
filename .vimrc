@@ -107,7 +107,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set t_Co=256
 set ttyfast
 set mouse=a
 set ttymouse=xterm2
@@ -115,9 +114,11 @@ set mousehide
 set backspace=indent,eol,start
 set clipboard=unnamed            " Use OSX clipboard in vim"
 
-syntax enable
 
-colorscheme codeschool
+syntax enable
+set background=dark
+colorscheme desert
+let g:solarized_termcolors=256
 
 " Custom Commands
 
@@ -145,7 +146,7 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-"Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 
 "Map leader
 let mapleader= ","
@@ -154,8 +155,8 @@ let mapleader= ","
 let g:acp_enableAtStartup = 0
 
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" let g:neocomplete#sources#syntax#min_keyword_length = 3
+" let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " JSX syntax highlighting in .js files
 let g:jsx_ext_required = 0
@@ -166,13 +167,6 @@ let g:jsdoc_default_mapping = 0
 
 " Use pbcopy for gist-vim
 let g:gist_clip_command = 'pbcopy'
-
-" Disable mulptiple cursor default
-" let g:multi_cursor_use_default_mapping=0
-" let g:multi_cursor_next_key='<Leader>n'
-" let g:multi_cursor_prev_key='<Leader>p'
-" let g:multi_cursor_skip_key='<Leader>x'
-" let g:multi_cursor_quit_key='<Esc>'
 
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>

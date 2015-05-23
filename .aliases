@@ -1,3 +1,6 @@
+alias whynot='rake db:drop db:create db:schema:load db:migrate db:seed db:populate:test_data db:populate:pd_resources db:populate:starter_packages'
+alias zmonkeypod='say -v Good -r 300 updating z monkey pod'
+
 alias vim='/usr/local/bin/vim'
 alias esstart="elasticsearch --config=/usr/local/opt/elasticsearch/config/elasticsearch.yml"
 alias mysqlstart="mysql.server start"
