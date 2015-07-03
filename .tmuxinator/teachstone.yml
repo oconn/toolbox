@@ -54,4 +54,11 @@ windows:
                 - rails server --port 4000
             - redis:
                 - redis-server
+    - mailcatcher:
+        layout: even-horizontal
+        panes:
+            - mailcatcher:
+                - mailcatcher
+            - terminal:
+                - cd teachstone
 

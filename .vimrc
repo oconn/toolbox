@@ -1,5 +1,5 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype plugin indent on     " was set to `off`, but vim-clojure-static requires it set `plugin indent on`
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,35 +16,6 @@ Plugin 'scrooloose/nerdtree'
 " Comment out current line
 Plugin 'scrooloose/nerdcommenter'
 
-"Doc generator plugin"
-Plugin 'heavenshell/vim-jsdoc'
-
-" Multiple Cursors
-Plugin 'terryma/vim-multiple-cursors'
-
-" Javascript syntax
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-
-" CSS syntax
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'groenewege/vim-less'
-
-" Syntax Highlighting for Swift
-Plugin 'keithbsmiley/swift.vim'
-
-" plugin for Cocoa/Objective-C development.
-Plugin 'msanders/cocoa.vim'
-
-" Syntax Highlighting for hbs
-Plugin 'mustache/vim-mustache-handlebars'
-
-" Scala syntax
-Plugin 'derekwyatt/vim-scala'
-
-" Jade syntax
-Plugin 'digitaltoad/vim-jade'
-
 " Auto closing brakets
 Plugin 'Raimondi/delimitMate'
 
@@ -58,9 +29,6 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-
 " git wrapper
 Plugin 'tpope/vim-fugitive'
 
@@ -73,18 +41,48 @@ Plugin 'L9'
 " emmet expanding abbreviations
 Plugin 'mattn/emmet-vim'
 
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
+" +++++++++++++++++++++ JS ++++++++++++++++++++++
+" Javascript syntax
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+" +++++++++++++++++++++++++++++++++++++++++++++++
 
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
+" +++++++++++++++++++++ CSS +++++++++++++++++++++
+" CSS syntax
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
 
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Jade syntax
+Plugin 'digitaltoad/vim-jade'
+" +++++++++++++++++++++++++++++++++++++++++++++++
+
+" ++++++++++++++++++++ SWIFT ++++++++++++++++++++
+" Syntax Highlighting for Swift
+" Plugin 'keithbsmiley/swift.vim'
+
+" plugin for Cocoa/Objective-C development.
+" Plugin 'msanders/cocoa.vim'
+" +++++++++++++++++++++++++++++++++++++++++++++++
+
+" ++++++++++++++++++++ SCALA ++++++++++++++++++++
+" Scala syntax
+Plugin 'derekwyatt/vim-scala'
+" +++++++++++++++++++++++++++++++++++++++++++++++
+
+" ++++++++++++++++++++ CLOJURE ++++++++++++++++++++
+" Clojure-specific indentation & syntax highlighting
+Plugin 'guns/vim-clojure-static'
+
+" Clojure REPL support in VIM
+Plugin 'tpope/vim-fireplace'
+
+" Structured Editing of Lisp S-expressions
+Plugin 'vim-scripts/paredit.vim'
+" +++++++++++++++++++++++++++++++++++++++++++++++
 
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -114,14 +112,13 @@ set mousehide
 set backspace=indent,eol,start
 set clipboard=unnamed            " Use OSX clipboard in vim"
 
-
-syntax enable
 set background=dark
 colorscheme desert
 let g:solarized_termcolors=256
 
-" Custom Commands
+syntax on
 
+" Custom Commands
 autocmd BufWritePre * :%s/\s\+$//e
 " ==============================================================================
 " Set up the silver searcher for way faster searching

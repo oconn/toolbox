@@ -1,0 +1,73 @@
+#  ~/.tmuxinatkr/portfolio.yml
+
+name: portfolio
+root: ~/Projects/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+pre: mongod --fork --logpath /tmp/mongodb.log
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+    - api:
+        layout: 193b,204x51,0,0{61x51,0,0,0,142x51,62,0,5}
+        panes:
+            - server:
+                - cd node-api
+                - gulp start
+            - editor:
+                - cd node-api
+                - vim .
+    - app-server:
+        layout: 193b,204x51,0,0{61x51,0,0,0,142x51,62,0,5}
+        panes:
+            - server:
+                - cd app-server
+                - nodemon server.js
+            - editor:
+                - cd app-server
+                - vim .
+    - client-guest:
+        layout: 193b,204x51,0,0{61x51,0,0,0,142x51,62,0,5}
+        panes:
+            - webpack:
+                - cd node-api
+                - gulp start:client:guest
+            - editor:
+                - cd node-api/builds/client_portal/guest
+                - vim .
+    - client-authed:
+        layout: 193b,204x51,0,0{61x51,0,0,0,142x51,62,0,5}
+        panes:
+            - webpack:
+                - cd node-api
+                - gulp start:client:authed
+            - editor:
+                - cd node-api/builds/client_portal/authed
+                - vim .
+    - user:
+        layout: 193b,204x51,0,0{61x51,0,0,0,142x51,62,0,5}
+        panes:
+            - webpack:
+                - cd node-api
+                - gulp start:user
+            - editor:
+                - cd node-api/builds/user_portal
+                - vim .
+    - mongodb:
+        layout: 193b,204x51,0,0{61x51,0,0,0,142x51,62,0,5}
+        panes:
+            - bash:
+                - cd node-api
+            - mongo:
+                - mongo
