@@ -1,11 +1,7 @@
 set nocompatible              " be iMproved, required
-filetype plugin indent on     " was set to `off`, but vim-clojure-static requires it set `plugin indent on`
-
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -71,13 +67,13 @@ Plugin 'derekwyatt/vim-scala'
 
 " ++++++++++++++++++++ CLOJURE ++++++++++++++++++++
 " Clojure-specific indentation & syntax highlighting
-Plugin 'guns/vim-clojure-static'
+" Plugin 'guns/vim-clojure-static'
 
 " Clojure REPL support in VIM
-Plugin 'tpope/vim-fireplace'
+" Plugin 'tpope/vim-fireplace'
 
 " Structured Editing of Lisp S-expressions
-Plugin 'vim-scripts/paredit.vim'
+" Plugin 'vim-scripts/paredit.vim'
 " +++++++++++++++++++++++++++++++++++++++++++++++
 
 " Avoid a name conflict with L9
@@ -86,19 +82,16 @@ Plugin 'vim-scripts/paredit.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!) foo - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+
+filetype plugin indent on
+syntax on
+
+" Color Theme
+set background=dark
+colorscheme desert
+let g:solarized_termcolors=256
+
 
 set number
 set tabstop=4
@@ -112,16 +105,10 @@ set mousehide
 set backspace=indent,eol,start
 set clipboard=unnamed            " Use OSX clipboard in vim"
 
-set background=dark
-colorscheme desert
-let g:solarized_termcolors=256
-
-syntax on
-
 " Custom Commands
 autocmd BufWritePre * :%s/\s\+$//e
-
 au BufNewFile,BufRead *.ejs set filetype=html
+
 " ==============================================================================
 " Set up the silver searcher for way faster searching
 " ==============================================================================
@@ -144,8 +131,6 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-
-" Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 
 "Map leader
 let mapleader= ","
