@@ -37,48 +37,47 @@ Plugin 'L9'
 " emmet expanding abbreviations
 Plugin 'mattn/emmet-vim'
 
-" +++++++++++++++++++++ JS ++++++++++++++++++++++
-" Javascript syntax
+" Distraction Free writing
+Plugin 'junegunn/goyo.vim'
+
+" **************** SYNTAX ****************** "
+
+" Javascript
+
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-" +++++++++++++++++++++++++++++++++++++++++++++++
 
-" +++++++++++++++++++++ CSS +++++++++++++++++++++
-" CSS syntax
+" CSS
+
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 
-" Jade syntax
+" Markdown
+
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+" Jade
+
 Plugin 'digitaltoad/vim-jade'
-" +++++++++++++++++++++++++++++++++++++++++++++++
 
-" ++++++++++++++++++++ SWIFT ++++++++++++++++++++
-" Syntax Highlighting for Swift
+" Swift
+
 " Plugin 'keithbsmiley/swift.vim'
-
-" plugin for Cocoa/Objective-C development.
+" Plugin for Cocoa/Objective-C development.
 " Plugin 'msanders/cocoa.vim'
-" +++++++++++++++++++++++++++++++++++++++++++++++
 
-" ++++++++++++++++++++ SCALA ++++++++++++++++++++
 " Scala syntax
-Plugin 'derekwyatt/vim-scala'
-" +++++++++++++++++++++++++++++++++++++++++++++++
 
-" ++++++++++++++++++++ CLOJURE ++++++++++++++++++++
-" Clojure-specific indentation & syntax highlighting
+" Plugin 'derekwyatt/vim-scala'
+
+" Clojure
+
 " Plugin 'guns/vim-clojure-static'
-
-" Clojure REPL support in VIM
 " Plugin 'tpope/vim-fireplace'
-
-" Structured Editing of Lisp S-expressions
 " Plugin 'vim-scripts/paredit.vim'
-" +++++++++++++++++++++++++++++++++++++++++++++++
 
-" Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
-
+" ************ END SYNTAX ************** "
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -107,7 +106,10 @@ set clipboard=unnamed            " Use OSX clipboard in vim"
 
 " Custom Commands
 autocmd BufWritePre * :%s/\s\+$//e
-au BufNewFile,BufRead *.ejs set filetype=html
+
+au! BufNewFile,BufRead *.ejs      set filetype=html
+au! BufRead,BufNewFile *.markdown set filetype=mkd
+au! BufRead,BufNewFile *.md       set filetype=mkd
 
 " ==============================================================================
 " Set up the silver searcher for way faster searching
