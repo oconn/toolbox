@@ -120,6 +120,8 @@ syntax on
 
 " Custom Commands
 autocmd BufWritePre * :%s/\s\+$//e
+
+au BufNewFile,BufRead *.ejs set filetype=html
 " ==============================================================================
 " Set up the silver searcher for way faster searching
 " ==============================================================================

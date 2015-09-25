@@ -1,0 +1,47 @@
+# ~/.tmuxinator/api.yml
+
+name: api
+root: ~/Projects/alpha/
+
+    # Optional tmux socket
+    # socket_name: foo
+
+    # Runs before everything. Use it to start daemons etc.
+pre: mongod --fork --logpath /tmp/mongodb.log
+
+    # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+    # pre_window: rbenv shell 2.1.3
+
+    # Pass command line options to tmux. Useful for specifying a different tmux.conf.
+    # tmux_options: -f ~/.tmux.mac.conf
+
+    # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+    # tmux_command: byobu
+
+windows:
+    - api:
+        layout: even-horizontal
+        panes:
+            - terminal:
+                - cd clojure-api && clear
+            - server:
+                - cd clojure-api && clear
+                - boot dev-run
+    - vim-api:
+        panes:
+            - editor:
+                - cd clojure-api && clear
+                - vim .
+    - client:
+        layout: even-horizontal
+        panes:
+            - terminal:
+                - cd react-client && clear
+                - gulp
+            - vim:
+                - cd react-client && clear
+                - vim .
+    - mongodb:
+        panes:
+            - connect:
+                - mongo
