@@ -40,7 +40,22 @@ Plugin 'mattn/emmet-vim'
 " Distraction Free writing
 Plugin 'junegunn/goyo.vim'
 
+" Typescript support
+" NOTE install with pathogen `git clone https://github.com/leafgarland/typescript-vim.git ~/.vim/bundle/typescript-vim`
+
 " **************** SYNTAX ****************** "
+
+" Syntax checking
+" Plugin 'scrooloose/syntastic'
+
+" TypeScript
+Plugin 'leafgarland/typescript-vim'
+
+" ActionScript (why? ¯\_(ツ)_/¯ because primetime...)
+Plugin 'vim-scripts/Flex-Development-Support'
+
+" Plugin 'jeroenbourgois/vim-actionscript'
+" Plugin 'cespare/mxml.vim'
 
 " Javascript
 
@@ -82,6 +97,8 @@ Plugin 'digitaltoad/vim-jade'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
+" Start pathogen
+execute pathogen#infect()
 
 filetype plugin indent on
 syntax on
@@ -90,7 +107,6 @@ syntax on
 set background=dark
 colorscheme desert
 let g:solarized_termcolors=256
-
 
 set number
 set tabstop=4
@@ -103,6 +119,24 @@ set ttymouse=xterm2
 set mousehide
 set backspace=indent,eol,start
 set clipboard=unnamed            " Use OSX clipboard in vim"
+
+" Start Syntastic Setup
+
+" let g:syntastic_mode_map = { 'mode': 'active',
+"                             \ 'active_filetypes': ['javascript'],
+"                             \ 'passive_filetypes': [] }
+"
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['eslint']
+
+" End Syntastic Setup
 
 " Custom Commands
 autocmd BufWritePre * :%s/\s\+$//e
