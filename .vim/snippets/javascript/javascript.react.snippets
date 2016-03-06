@@ -1,0 +1,60 @@
+snippet im
+	import ${1} from '${0}';
+snippet rc
+	import React from 'react';
+
+	export default class ${1} extends React.Component {
+
+		render() {
+			return (
+				${0}
+			);
+		}
+	}
+snippet rrc
+	import React from 'react';
+	import { bindActionCreators } from 'redux';
+	import { connect } from 'react-redux';
+
+	const mapStateToProps = (state, ownProps) => {
+	    return {
+			${1}
+	    };
+	};
+
+	const mapDispatchToProps = (dispatch, ownProps) => {
+	    return {
+	        actions: bindActionCreators(${2} ,dispatch)
+	    };
+	};
+
+	@connect(mapStateToProps, mapDispatchToProps)
+	export default class Predix extends React.Component {
+	    render() {
+	        return (
+	           ${0}
+	        );
+	    }
+	}
+snippet rr
+	import { identity } from 'ramda';
+
+	const initialState = {
+		${1}
+	};
+
+	const actionHandlers = {
+		${0}
+	};
+
+	export default (state = initialState, action) => {
+	    const actionHandler = actionHandlers[action.type] || identity;
+
+	    return actionHandler(state, action);
+	};
+snippet ra
+	export const ${1} = (${2}) => {
+		return (dispatch) => {
+			${0}
+		};
+	};

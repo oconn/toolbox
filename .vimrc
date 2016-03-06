@@ -88,8 +88,8 @@ Plugin 'digitaltoad/vim-jade'
 
 " Clojure
 
-" Plugin 'guns/vim-clojure-static'
-" Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
 " Plugin 'vim-scripts/paredit.vim'
 
 " ************ END SYNTAX ************** "
@@ -144,6 +144,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 au! BufNewFile,BufRead *.ejs      set filetype=html
 au! BufRead,BufNewFile *.markdown set filetype=mkd
 au! BufRead,BufNewFile *.md       set filetype=mkd
+au! BufNewFile,BufRead *.boot     set syntax=clojure
 
 " ==============================================================================
 " Set up the silver searcher for way faster searching
