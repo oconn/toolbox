@@ -90,6 +90,8 @@ Plugin 'digitaltoad/vim-jade'
 
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
+Plugin 'kien/rainbow_parentheses.vim'
+
 " Plugin 'vim-scripts/paredit.vim'
 
 " ************ END SYNTAX ************** "
@@ -109,9 +111,6 @@ colorscheme desert
 let g:solarized_termcolors=256
 
 set number
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 set expandtab
 set ttyfast
 set mouse=a
@@ -144,7 +143,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 au! BufNewFile,BufRead *.ejs      set filetype=html
 au! BufRead,BufNewFile *.markdown set filetype=mkd
 au! BufRead,BufNewFile *.md       set filetype=mkd
-au! BufNewFile,BufRead *.boot     set syntax=clojure
+au! BufNewFile,BufRead *.boot     set filetype=clojure
 
 " ==============================================================================
 " Set up the silver searcher for way faster searching

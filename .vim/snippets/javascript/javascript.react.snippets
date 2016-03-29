@@ -11,25 +11,39 @@ snippet rc
 			);
 		}
 	}
-snippet rrc
+snippet rsc
 	import React from 'react';
+
+	const ${1} = (props, context) => {
+	    return (
+	   	${0}
+	    );
+	}
+
+	export default ${2}
+snippet rrc
+	import React, { Component, PropTypes } from 'react';
 	import { bindActionCreators } from 'redux';
 	import { connect } from 'react-redux';
 
 	const mapStateToProps = (state, ownProps) => {
-	    return {
-			${1}
-	    };
+	    return {${1}};
 	};
 
 	const mapDispatchToProps = (dispatch, ownProps) => {
 	    return {
-	        actions: bindActionCreators(${2} ,dispatch)
+	        actions: bindActionCreators({${2}} ,dispatch)
 	    };
 	};
 
 	@connect(mapStateToProps, mapDispatchToProps)
-	export default class Predix extends React.Component {
+	export default class ${3} extends Component {
+	    static propTypes = {
+	        actions: PropTypes.shape({
+		    ${4}
+		}).isRequired
+	    };
+
 	    render() {
 	        return (
 	           ${0}
