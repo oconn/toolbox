@@ -6,3 +6,4 @@ __MACOSX
 *.sw[pio]
 
 .vim/.netrwhist
+.vim/plugged/
