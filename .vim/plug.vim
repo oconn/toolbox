@@ -30,6 +30,16 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+
+" Clojure REPL support
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Precision Editing for S-expressions
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
+
+" Sass linting
+Plug 'gcorne/vim-sass-lint', { 'for': 'scss' }
 
 " TSServer in vim
 Plug 'quramy/tsuquyomi'
