@@ -39,6 +39,13 @@
     ;; https://github.com/clojure-emacs/clojure-mode
     clojure-mode
 
+    ;; js major-mode
+    js2-mode
+    
+    ;; autonomous major-mode for editing web templates
+    ;; css / javascript
+    web-mode
+
     ;; extra syntax highlighting for clojure
     clojure-mode-extra-font-locking
 
@@ -66,7 +73,17 @@
     tagedit
 
     ;; git integration
-    magit))
+    magit
+
+    ;; auto completion
+    auto-complete
+
+    ;; Helm is incremental completion and selection narrowing framework for Emacs.
+    helm
+
+    ;; IRC Client
+    erc))
+
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -104,6 +121,7 @@
 
 ;; Add a directory to our load path so that when you `load` things
 ;; below, Emacs knows where to look for the corresponding file.
+
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
 ;; Sets up exec-path-from-shell so that Emacs will use the correct
@@ -130,3 +148,12 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+
+;; Configure ERC
+(load "setup-erc.el")
+
+;; Configure Auto complete
+(load "setup-auto-complete.el")
+
+;; Configure Helm
+(load "setup-helm.el")
