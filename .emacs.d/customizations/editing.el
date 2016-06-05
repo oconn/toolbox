@@ -70,3 +70,9 @@
     (quit nil)))
 
 (setq electric-indent-mode nil)
+
+;; Spelling
+(global-set-key (kbd "M-=") 'ispell-word)
+
+;; White space management
+(add-hook 'before-save-hook 'delete-trailing-whitespace)

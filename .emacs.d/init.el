@@ -10,6 +10,8 @@
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("org" . "http://orgmode.org/elpa") t)
 
 ;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 ;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -41,10 +43,16 @@
 
     ;; js major-mode
     js2-mode
-    
+
     ;; autonomous major-mode for editing web templates
     ;; css / javascript
     web-mode
+
+    ;; major mode for sass
+    sass-mode
+
+    ;; major mode for less
+    less-css-mode
 
     ;; extra syntax highlighting for clojure
     clojure-mode-extra-font-locking
@@ -109,7 +117,7 @@
 ;;
 ;; (require 'yaml-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-;; 
+;;
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -148,6 +156,8 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+(load "setup-scss.el")
+(load "setup-less.el")
 
 ;; Configure ERC
 (load "setup-erc.el")

@@ -1,2 +1,16 @@
-((("require" .
+(((":refer" .
+   [1 0 0 0 0 0])
+  ("battlebots.panels." .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("active-game" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("game" .
+   [1 0 0 0])
+  ("render-arena" .
+   [1 0 0 0 0 0 0 0 0 1 0 0])
+  ("def" .
+   [1 0 0])
+  ("battlebots.components.arena" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("require" .
    [0 0 0 0 1 0 0])))
