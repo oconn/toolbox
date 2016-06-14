@@ -86,6 +86,15 @@
     ;; auto completion
     auto-complete
 
+    ;; TypeScript Interactive Development Environment for Emacs
+    tide
+
+    ;; Modern on-the-fly syntax checking extension for GNU Emacs 24
+    flycheck
+
+    ;; Company is a text completion framework for Emacs.
+    company
+
     ;; Helm is incremental completion and selection narrowing framework for Emacs.
     helm
 
@@ -158,6 +167,7 @@
 (load "setup-js.el")
 (load "setup-scss.el")
 (load "setup-less.el")
+(load "setup-typescript.el")
 
 ;; Configure ERC
 (load "setup-erc.el")
@@ -167,3 +177,6 @@
 
 ;; Configure Helm
 (load "setup-helm.el")
+
+;; Configure Org Mode
+(load "setup-org-mode.el")

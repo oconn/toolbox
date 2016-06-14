@@ -56,7 +56,7 @@
 
 
 ;; key bindings
-;; these help me out with the way I usually develop web apps
+;; these help me out with the way I usually develop web app
 (defun cider-start-http-server ()
   (interactive)
   (cider-load-current-buffer)
