@@ -11,9 +11,10 @@
 (define-key global-map (kbd "C-c a") 'org-agenda)
 
 ;; Insert timestamp
-(define-key org-mode-map (kbd "C-i") (kbd "C-u C-c !"))
+;; (define-key org-mode-map (kbd "C-i") (kbd "C-u C-c !"))
 
-(setq org-agenda-files (list (concat org-directory "todos")))
+(setq org-agenda-files (list (concat org-directory "todos")
+                             (concat org-directory "dates")))
 (setq org-log-done t)
 (setq org-tag-alist '())
 

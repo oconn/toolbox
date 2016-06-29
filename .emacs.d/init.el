@@ -41,6 +41,9 @@
     ;; https://github.com/clojure-emacs/clojure-mode
     clojure-mode
 
+    ;; scala major-mode
+    scala-mode
+
     ;; js major-mode
     js2-mode
 
@@ -168,6 +171,7 @@
 (load "setup-scss.el")
 (load "setup-less.el")
 (load "setup-typescript.el")
+(load "setup-scala.el")
 
 ;; Configure ERC
 (load "setup-erc.el")
