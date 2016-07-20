@@ -102,7 +102,10 @@
     helm
 
     ;; IRC Client
-    erc))
+    erc
+
+    ;; Silver Searcher
+    ag))
 
 
 ;; On OS X, an Emacs instance started from the graphical user

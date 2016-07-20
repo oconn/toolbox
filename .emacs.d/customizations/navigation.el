@@ -59,3 +59,6 @@
 
 ;; projectile everywhere!
 (projectile-global-mode)
+
+;; AG configuration
+(setq ag-highlight-search t)
