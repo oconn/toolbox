@@ -7,15 +7,3 @@ __MACOSX
 
 .vim/.netrwhist
 .vim/plugged/
-
-.emacs.d/.recentf
-.emacs.d/.smex-items
-.emacs.d/ac-comphist.dat
-.emacs.d/auto-save-list
-.emacs.d/backups
-.emacs.d/cider-history
-.emacs.d/elpa
-.emacs.d/ido.last
-.emacs.d/places
-.emacs.d/projectile-bookmarks.eld
-.emacs.d/url/
