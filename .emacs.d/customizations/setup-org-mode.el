@@ -16,6 +16,8 @@
 (setq org-agenda-files (list (concat org-directory "todos")
                              (concat org-directory "dates")))
 (setq org-log-done t)
-(setq org-tag-alist '())
+(setq org-tag-alist '(("@feature" . ?f)
+                      ("@bug" . ?b)
+                      ("@enhancement" . ?e)))
 
 (setq org-agenda-include-diary t)
