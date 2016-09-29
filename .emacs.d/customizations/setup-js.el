@@ -6,6 +6,12 @@
 (add-hook 'web-mode-hook 'subword-mode)
 (add-hook 'js2-mode-hook 'subword-mode)
 (add-hook 'html-mode-hook 'subword-mode)
+(add-hook 'web-mode-hook
+      (lambda ()
+        ;; short circuit js mode and just do everything in jsx-mode
+        (if (equal web-mode-content-type "javascript")
+            (web-mode-set-content-type "jsx")
+          (message "now set to: %s" web-mode-content-type))))
 
 (setq js-indent-level 4)
 
