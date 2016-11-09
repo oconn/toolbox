@@ -13,6 +13,9 @@
             (web-mode-set-content-type "jsx")
           (message "now set to: %s" web-mode-content-type))))
 
+(add-hook 'web-mode-hook #'yas-minor-mode)
+(add-hook 'js2-mode-hook #'yas-minor-mode)
+
 (setq js-indent-level 4)
 
 (eval-after-load "sgml-mode"
@@ -31,3 +34,7 @@
             (setq coffee-cleanup-whitespace nil)))
 (custom-set-variables
  '(coffee-tab-width 2))
+
+;; snippet support
+(require 'yasnippet)
+(yas-global-mode 1)

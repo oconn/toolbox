@@ -111,7 +111,10 @@
     erc
 
     ;; Silver Searcher
-    ag))
+    ag
+
+    ;; Snippet Support
+    yasnippet))
 
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -198,10 +201,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   [zenburn-bg zenburn-red zenburn-green zenburn-yellow zenburn-blue zenburn-magenta zenburn-cyan zenburn-fg])
  '(coffee-tab-width 2)
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "fe230d2861a13bb969b5cdf45df1396385250cc0b7933b8ab9a2f9339b455f5c" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "b9b7551ad28ec3453c7ace2de0e21f4eef1c4b7d289c7b253b902f8df7f77b60" "a8bad694dd694d93d6bd1ffc5d2357f8a74efff8804cf503f28f35e9fd61e7b8" "01a4ba5a1b510dc0ab9d7c84cfd50dd298f2c623e53ccbd4c5c787abdf68d6b2" default)))
  '(org-agenda-files
    (quote
-    ("/Users/mattoconnell/Dropbox/ORG/todos/personal.org" "/Users/mattoconnell/Dropbox/ORG/todos/help.org" "/Users/mattoconnell/Dropbox/ORG/todos/point.org" "/Users/mattoconnell/Dropbox/ORG/todos/work.org" "/Users/mattoconnell/Dropbox/ORG/dates/anniversaries.org" "/Users/mattoconnell/Dropbox/ORG/dates/birthdays.org"))))
+    ("/Users/mattoconnell/Dropbox/ORG/todos/personal.org" "/Users/mattoconnell/Dropbox/ORG/todos/help.org" "/Users/mattoconnell/Dropbox/ORG/todos/point.org" "/Users/mattoconnell/Dropbox/ORG/todos/work.org" "/Users/mattoconnell/Dropbox/ORG/dates/anniversaries.org" "/Users/mattoconnell/Dropbox/ORG/dates/birthdays.org")) t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
